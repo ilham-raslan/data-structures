@@ -1,4 +1,4 @@
-package com.ilham.github.datastructures.doublylinkedlist;
+package com.ilham.github.datastructures.doublylinkedlist.model;
 
 import lombok.Data;
 

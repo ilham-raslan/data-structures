@@ -1,4 +1,4 @@
-package com.ilham.github.datastructures.binarysearchtree;
+package com.ilham.github.datastructures.binarysearchtree.model;
 
 import lombok.Data;
 

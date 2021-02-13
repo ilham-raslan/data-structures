@@ -1,6 +1,6 @@
 package com.ilham.github.datastructures.queue;
 
-import com.ilham.github.datastructures.doublylinkedlist.DoublyLinkedNode;
+import com.ilham.github.datastructures.doublylinkedlist.model.DoublyLinkedNode;
 
 public class Queue<T extends Comparable<T>> {
     private DoublyLinkedNode<T> headNode;

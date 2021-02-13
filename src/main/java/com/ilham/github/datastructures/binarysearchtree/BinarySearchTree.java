@@ -1,5 +1,7 @@
 package com.ilham.github.datastructures.binarysearchtree;
 
+import com.ilham.github.datastructures.binarysearchtree.model.TreeNode;
+
 /**
  * Basic Binary Search Tree Implementation.
  * @param <T>
@@ -65,86 +67,6 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
 
         newNode.setParentNode(parentNode);
-    }
-
-    public void remove(T data) {
-        if (this.rootNode == null) {
-            System.out.println("No nodes in this tree, so no removal performed");
-            return;
-        }
-
-        remove(data, this.rootNode);
-    }
-
-    // Needed to refer to content a lot for this method, may want to revisit in the future
-    private void remove(T data, TreeNode<T> node) {
-        if (node == null) {
-            return;
-        }
-
-        if (data.compareTo(node.getData()) > 0) {
-            remove(data, node.getRightNode());
-        }
-        else if (data.compareTo(node.getData()) < 0) {
-            remove(data, node.getLeftNode());
-        }
-        else {
-            if (node.getLeftNode() == null && node.getRightNode() == null) {
-                TreeNode<T> parentNode = node.getParentNode();
-
-                if (parentNode != null && parentNode.getRightNode() == node) {
-                    parentNode.setRightNode(null);
-                }
-                else if (parentNode != null && parentNode.getLeftNode() == node) {
-                    parentNode.setLeftNode(null);
-                }
-
-                if (parentNode == null) {
-                    this.rootNode = null;
-                }
-
-            }
-            else if (node.getLeftNode() == null && node.getRightNode() != null) {
-                TreeNode<T> parentNode = node.getParentNode();
-                if (parentNode != null && parentNode.getRightNode() == node) {
-                    parentNode.setRightNode(node.getRightNode());
-                }
-                else if (parentNode != null && parentNode.getLeftNode() == node) {
-                    parentNode.setLeftNode(node.getRightNode());
-                }
-
-                if (parentNode == null) {
-                    this.rootNode = node.getRightNode();
-                }
-
-                node.getRightNode().setParentNode(parentNode);
-            }
-            else if (node.getLeftNode() != null && node.getRightNode() == null) {
-                TreeNode<T> parentNode = node.getParentNode();
-                if (parentNode != null && parentNode.getRightNode() == node) {
-                    parentNode.setRightNode(node.getLeftNode());
-                }
-                else if (parentNode != null && parentNode.getLeftNode() == node) {
-                    parentNode.setLeftNode(node.getLeftNode());
-                }
-
-                if (parentNode == null) {
-                    this.rootNode = node.getLeftNode();
-                }
-
-                node.getLeftNode().setParentNode(parentNode);
-                node = null;
-            }
-            else {
-                TreeNode<T> predecessor = getPredecessor(node.getLeftNode());
-
-                T temp = predecessor.getData();
-                predecessor.setData(node.getData());
-                node.setData(temp);
-
-                remove(data, predecessor);
-            }
-        }
     }
 
     private TreeNode<T> getPredecessor(TreeNode<T> node) {

@@ -1,5 +1,7 @@
 package com.ilham.github.datastructures.doublylinkedlist;
 
+import com.ilham.github.datastructures.doublylinkedlist.model.DoublyLinkedNode;
+
 /**
  * Doubly Linked List, but with limited functionality
  * @param <T>

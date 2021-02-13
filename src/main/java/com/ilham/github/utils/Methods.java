@@ -1,11 +1,31 @@
 package com.ilham.github.utils;
 
+import com.ilham.github.datastructures.binarysearchtree.BinarySearchTree;
 import com.ilham.github.datastructures.doublylinkedlist.DoublyLinkedList;
 import com.ilham.github.datastructures.linkedlist.LinkedList;
 import com.ilham.github.datastructures.queue.Queue;
 import com.ilham.github.datastructures.stack.Stack;
 
 public class Methods {
+    public static void testBinarySearchTree() {
+        BinarySearchTree<Integer> bst = new BinarySearchTree<Integer>();
+
+        bst.insert(3);
+        bst.insert(1);
+        bst.insert(2);
+        bst.insert(4);
+        bst.insert(5);
+        bst.insert(10);
+        bst.insert(8);
+        bst.insert(7);
+        bst.insert(6);
+
+        bst.traversal();
+
+        System.out.println(bst.getMin());
+        System.out.println(bst.getMax());
+    }
+
     public static void testQueue() {
         Queue<Integer> queue = new Queue<Integer>();
 

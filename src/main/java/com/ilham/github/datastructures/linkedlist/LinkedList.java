@@ -1,5 +1,8 @@
 package com.ilham.github.datastructures.linkedlist;
 
+import com.ilham.github.datastructures.linkedlist.model.List;
+import com.ilham.github.datastructures.linkedlist.model.Node;
+
 /**
  * LinkedList implementation
  * @param <T>

@@ -1,4 +1,4 @@
-package com.ilham.github.datastructures.linkedlist;
+package com.ilham.github.datastructures.linkedlist.model;
 
 public interface List<T> {
     public void insert(T data);

@@ -1,6 +1,6 @@
 package com.ilham.github.datastructures.stack;
 
-import com.ilham.github.datastructures.linkedlist.Node;
+import com.ilham.github.datastructures.linkedlist.model.Node;
 
 /**
  * This is a stack implementation that uses the Node class of the linkedlist package
