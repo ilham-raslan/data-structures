@@ -2,12 +2,14 @@ package com.ilham.github.datastructures.hashmap;
 
 import com.ilham.github.datastructures.hashmap.model.HashObject;
 
+import static com.ilham.github.utils.Constants.HASHMAP_CAPACITY;
+
 public class HashMap<K extends Comparable<K>, V extends Comparable<V>> {
-    private final static int CAPACITY = 10;
+
     private HashObject<K, V>[] array;
 
     public HashMap() {
-        this.array = new HashObject[CAPACITY];
+        this.array = new HashObject[HASHMAP_CAPACITY];
     }
 
     public void put(K key, V value) {
@@ -47,6 +49,6 @@ public class HashMap<K extends Comparable<K>, V extends Comparable<V>> {
     }
 
     private int hash(K key) {
-        return key.hashCode() % CAPACITY;
+        return key.hashCode() % HASHMAP_CAPACITY;
     }
 }
