@@ -63,4 +63,41 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         }
         System.out.println();
     }
+
+    public void remove(T value) {
+        if (this.headNode.getVal().compareTo(value) == 0) {
+            DoublyLinkedNode<T> currentHeadNode = this.headNode;
+            this.headNode = this.headNode.getNextNode();
+            currentHeadNode.setNextNode(null);
+            this.headNode.setPreviousNode(null);
+            this.size--;
+            return;
+        }
+        if (this.tailNode.getVal().compareTo(value) == 0) {
+            DoublyLinkedNode<T> currentTailNode = this.tailNode;
+            this.tailNode = this.tailNode.getPreviousNode();
+            currentTailNode.setPreviousNode(null);
+            this.tailNode.setNextNode(null);
+            this.size--;
+            return;
+        }
+
+        DoublyLinkedNode<T> currentNode = this.headNode.getNextNode();
+
+        while (currentNode != null) {
+            if (currentNode.getVal().compareTo(value) == 0) {
+                DoublyLinkedNode<T> previousNode = currentNode.getPreviousNode();
+                DoublyLinkedNode<T> nextNode = currentNode.getNextNode();
+                previousNode.setNextNode(nextNode);
+                nextNode.setPreviousNode(previousNode);
+                currentNode.setNextNode(null);
+                currentNode.setPreviousNode(null);
+                this.size--;
+                return;
+            }
+            currentNode = currentNode.getNextNode();
+        }
+
+        System.out.println("Did not find node to remove, and hence removing nothing");
+    }
 }
